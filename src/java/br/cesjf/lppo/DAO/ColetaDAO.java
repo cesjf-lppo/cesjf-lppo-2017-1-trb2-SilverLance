@@ -2,6 +2,7 @@ package br.cesjf.lppo.DAO;
 
 import br.cesjf.lppo.classes.Coleta;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ public class ColetaDAO {
     public ColetaDAO() throws Exception {
         Connection conexao = ConnectionFactory.createConnection();
         opListarColeta = conexao.prepareStatement("SELECT * FROM coleta");
-        opNovaColeta = conexao.prepareStatement("INSERT INTO coleta(descricao, data) Values(?, ?)");
+        opNovaColeta = conexao.prepareStatement("INSERT INTO coleta(descricao) Values(?)");
     }
 
     public List<Coleta> listarColetas() throws Exception {
@@ -35,12 +36,12 @@ public class ColetaDAO {
                 Coleta coletaAtual = new Coleta();
                 coletaAtual.setId(resultado.getInt("id"));
                 coletaAtual.setDescricao(resultado.getString("descricao"));
-                coletaAtual.setData(resultado.getTimestamp("atualizacao"));
+                coletaAtual.setData(resultado.getTimestamp("data"));
                 coletas.add(coletaAtual);
             }
             return coletas;
         } catch (SQLException ex) {
-            throw new Exception("Erro ao listar os coletas no banco!", ex);
+            throw new Exception("Erro ao listar as coletas no banco!", ex);
         }
     }
 
@@ -49,9 +50,10 @@ public class ColetaDAO {
             opNovaColeta.clearParameters();
             opNovaColeta.setLong(1, novaColeta.getId());
             opNovaColeta.setString(2, novaColeta.getDescricao());
+            opNovaColeta.setDate(3, (Date) novaColeta.getData());
             opNovaColeta.executeUpdate();
         } catch (SQLException ex) {
-            throw new Exception("Erro ao inserir novo coleta!", ex);
+            throw new Exception("Erro ao inserir nova coleta!", ex);
         }
     }
 
