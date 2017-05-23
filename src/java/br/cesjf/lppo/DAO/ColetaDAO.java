@@ -15,7 +15,6 @@ import java.util.List;
  * @author Adriano
  */
 public class ColetaDAO {
-    private final SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private final PreparedStatement opListarColeta;
     private final PreparedStatement opNovaColeta;
     
@@ -24,7 +23,7 @@ public class ColetaDAO {
     public ColetaDAO() throws Exception {
         Connection conexao = ConnectionFactory.createConnection();
         opListarColeta = conexao.prepareStatement("SELECT * FROM coleta");
-        opNovaColeta = conexao.prepareStatement("INSERT INTO coleta(descricao) Values(?)");
+        opNovaColeta = conexao.prepareStatement("INSERT INTO coleta(descricao, data) Values(?, ?)");
     }
 
     public List<Coleta> listarColetas() throws Exception {
