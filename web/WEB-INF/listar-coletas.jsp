@@ -22,15 +22,15 @@
                 <th>ID</th>
                 <th>Descricão</th>
                 <th>Data</th>
-                <th></th>
                 </tr>
             </thead>    
             <tbody>
                 <c:forEach var="coleta" items="${coletas}">    
                 <tr>
-                    <td><a href="detalhes.html?id=${coleta.id}">${coleta.id}</a></td>
+                    <td>${coleta.id}</td>
                     <td>${coleta.descricao}</td>
-                    <td>${coleta.atualizacao}</td>
+                    <td>${coleta.data}</td>
+                    <td><a href="nova-leitura.html?id=${coleta.id}">FAZER LEITURA</a></td>
                 </tr>
                 </c:forEach>
             </tbody>

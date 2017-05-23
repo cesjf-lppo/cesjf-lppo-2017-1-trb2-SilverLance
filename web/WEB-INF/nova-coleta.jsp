@@ -17,6 +17,7 @@
         <div style="color: red;">${mensagem}</div>
         <form method="post">
             <div><label> Descricao: <input type="text" name="descricao" value="${coleta.descricao}" /></label> </div>
+            <div><label> Data: <input type="text" name="data" value="${coleta.data}" /></label> </div>
             <div><input type="submit" value="CADASTRAR"/></div>   
         </form>
     </body>
