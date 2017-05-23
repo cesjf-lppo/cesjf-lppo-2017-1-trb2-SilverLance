@@ -7,7 +7,7 @@ import java.util.Date;
  * @author Adriano
  */
 public class Coleta {
-   private int id;
+   private Long id;
    private String descricao;
    private Date data;
 
@@ -18,14 +18,14 @@ public class Coleta {
     /**
      * @return the id
      */
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setLong(Long id) {
         this.id = id;
     }
 

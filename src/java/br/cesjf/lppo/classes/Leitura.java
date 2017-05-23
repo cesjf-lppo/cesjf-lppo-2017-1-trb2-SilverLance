@@ -7,8 +7,8 @@ import java.util.Date;
  * @author Adriano
  */
 public class Leitura {
-    private int id;
-    private int coleta;
+    private Long id;
+    private Long coleta;
     private String local;
     private double leitura;
     private String unidade;
@@ -21,28 +21,28 @@ public class Leitura {
     /**
      * @return the id
      */
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setLong(Long id) {
         this.id = id;
     }
 
     /**
      * @return the coleta
      */
-    public int getColeta() {
+    public Long getColeta() {
         return coleta;
     }
 
     /**
      * @param coleta the coleta to set
      */
-    public void setColeta(int coleta) {
+    public void setColeta(Long coleta) {
         this.coleta = coleta;
     }
 

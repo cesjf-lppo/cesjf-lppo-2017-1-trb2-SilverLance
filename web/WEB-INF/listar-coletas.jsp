@@ -29,8 +29,8 @@
                 <c:forEach var="coleta" items="${coletas}">    
                 <tr>
                     <td><a href="detalhes.html?id=${coleta.id}">${coleta.id}</a></td>
-                    <td>${pedido.descricao}</td>
-                    <td>${pedido.atualizacao}</td>
+                    <td>${coleta.descricao}</td>
+                    <td>${coleta.atualizacao}</td>
                 </tr>
                 </c:forEach>
             </tbody>

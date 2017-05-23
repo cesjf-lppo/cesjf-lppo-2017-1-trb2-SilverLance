@@ -34,7 +34,7 @@ public class ColetaDAO {
             ResultSet resultado = opListarColeta.executeQuery();
             while (resultado.next()) {
                 Coleta coletaAtual = new Coleta();
-                coletaAtual.setId(resultado.getInt("id"));
+                coletaAtual.setLong(resultado.getLong("id"));
                 coletaAtual.setDescricao(resultado.getString("descricao"));
                 coletaAtual.setData(resultado.getTimestamp("data"));
                 coletas.add(coletaAtual);
